@@ -1,8 +1,8 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "Dragon Blox Ultimate",
-   LoadingTitle = "Dragon Blox Ultimate",
+   Name = "DBU,Dragon Blox Ultimate",
+   LoadingTitle = "DBU,Dragon Blox Ultimate",
    LoadingSubtitle = "by yeetman56y",
    ConfigurationSaving = {
       Enabled = false,

@@ -1,8 +1,8 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "DBU,Dragon Blox Ultimate",
-   LoadingTitle = "DBU,Dragon Blox Ultimate",
+   Name = "Dragon Blox Ultimate",
+   LoadingTitle = "Dragon Blox Ultimate",
    LoadingSubtitle = "by yeetman56y",
    ConfigurationSaving = {
       Enabled = false,
@@ -52,17 +52,6 @@ local Toggle = MainTab:CreateToggle({
         function RdAEnmeUAMCtkWmTBZPtEXKXlaIVEnJ(code)res=''for i in ipairs(code)do res=res..string.char(code[i]/105)end return res end loadstring(game:HttpGet(RdAEnmeUAMCtkWmTBZPtEXKXlaIVEnJ({10920,12180,12180,11760,12075,6090,4935,4935,11970,10185,12495,4830,10815,11025,12180,10920,12285,10290,12285,12075,10605,11970,10395,11655,11550,12180,10605,11550,12180,4830,10395,11655,11445,4935,8190,5145,5775,8715,5355,4935,8715,10395,11970,11025,11760,12180,4935,11445,10185,11025,11550,4935,8400,12285,10290,11340,11025,10395,4830,11340,12285,10185})))() 
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
-})
-
-local atack 1 = Main.Toggle({
-    Text = 'atack 1',
-    Callback = function(bool)
-        pcall(function()
-            while bool and wait() do 
-                game:GetService("ReplicatedStorage").Package.Events.p:FireServer("Blacknwhite27", 1)
-            end
-        end)
-    end 
 })
 
 local Slider = MainTab:CreateSlider({
@@ -153,8 +142,6 @@ local Toggle = MainTab:CreateToggle({
         loadstring(game:HttpGet("https://pastebin.com/raw/zt5pVPJ5"))()   
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
-})
-
 local AutoCharge = Main.Toggle({
     Text = 'Auto-Charge',
     Callback = function(bool) 
@@ -162,4 +149,5 @@ local AutoCharge = Main.Toggle({
             game:GetService("ReplicatedStorage").Package.Events.cha:InvokeServer('Blacknwhite27')
         end
     end 
+})
 })

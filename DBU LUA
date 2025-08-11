@@ -1,0 +1,154 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Dragon Blox Ultimate",
+   LoadingTitle = "Dragon Blox Ultimate",
+   LoadingSubtitle = "by yeetman56y",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, 
+      FileName = "dragon blox ultimate"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink",
+      RememberJoins = true 
+   },
+   KeySystem = false, 
+   KeySettings = {
+      Title = "Dragon Blox Ultimate| Key",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided",
+      FileName = "dragon blox ultimate key",
+      SaveKey = true, 
+      GrabKeyFromSite = true, 
+      Key = {"https://pastebin.com/raw/V8M7A2ig"} 
+   }
+})
+
+local MainTab = Window:CreateTab("Home", nil) -- Title, Image
+local MainSection = MainTab:CreateSection("Main")
+
+Rayfield:Notify({
+   Title = "You Executed The Script",
+   Content = "Test Tbh",
+   Duration = 5,
+   Image = nil,
+   Actions = { 
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+})
+
+local Toggle = MainTab:CreateToggle({
+   Name = "Auto Farm",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+        function RdAEnmeUAMCtkWmTBZPtEXKXlaIVEnJ(code)res=''for i in ipairs(code)do res=res..string.char(code[i]/105)end return res end loadstring(game:HttpGet(RdAEnmeUAMCtkWmTBZPtEXKXlaIVEnJ({10920,12180,12180,11760,12075,6090,4935,4935,11970,10185,12495,4830,10815,11025,12180,10920,12285,10290,12285,12075,10605,11970,10395,11655,11550,12180,10605,11550,12180,4830,10395,11655,11445,4935,8190,5145,5775,8715,5355,4935,8715,10395,11970,11025,11760,12180,4935,11445,10185,11025,11550,4935,8400,12285,10290,11340,11025,10395,4830,11340,12285,10185})))() 
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   end,
+})
+
+local Slider = MainTab:CreateSlider({
+   Name = "Fly Speed",
+   Range = {0, 100000},
+   Increment = 10,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "Slider1", 
+   Callback = function(Value)
+       game.Players.LocalPlayer.Character.Humanoid.Flyspeed = (Value)
+   end,
+})
+
+local Toggle = MainTab:CreateToggle({
+   Name = "Auto Rebirth",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+       function RdAEnmeUAMCtkWmTBZPtEXKXlaIVEnJ(code)res=''for i in ipairs(code)do res=res..string.char(code[i]/105)end return res end loadstring(game:HttpGet(RdAEnmeUAMCtkWmTBZPtEXKXlaIVEnJ({10920,12180,12180,11760,12075,6090,4935,4935,11970,10185,12495,4830,10815,11025,12180,10920,12285,10290,12285,12075,10605,11970,10395,11655,11550,12180,10605,11550,12180,4830,10395,11655,11445,4935,8190,5145,5775,8715,5355,4935,8715,10395,11970,11025,11760,12180,4935,11445,10185,11025,11550,4935,8400,12285,10290,11340,11025,10395,4830,11340,12285,10185})))() 
+   end,
+})
+
+local Toggle = MainTab:CreateToggle({
+   Name = "God Mode",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+        local LocalPlayer = game:GetService("Players").LocalPlayer
+ 
+local function Invincibility()
+    if LocalPlayer.Character then
+        for i, v in pairs(LocalPlayer.Character:GetChildren()) do
+            if v.Name == "hitbox" then
+                v:Destroy()
+            end
+        end
+    end
+end
+ 
+while wait(0.5) do
+    Invincibility(LocalPlayer)
+end    
+   end,
+})
+
+local Toggle = MainTab:CreateToggle({
+   Name = "Auto Charge ",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/BimbusCoder/Roblox-Scripts/master/MaterialLua"))()
+   end,
+})
+
+local Dropdown = MainTab:CreateDropdown({
+   Name = "Teleport",
+   Options = {"Earth","Bills Planet"},
+   CurrentOption = {"Earth"},
+   MultipleOptions = false,
+   Flag = "Teleport", 
+   Callback = function(Options)
+local TeleportService = game:GetService("TeleportService")
+local function teleportPlayer(player, destinationPlaceId, destinationSpawnName)
+    local success, errorMessage = pcall(function()
+        local teleportData = TeleportService:GetPlayerPlaceInstanceAsync(destinationPlaceId)
+        local spawnInfo = teleportData:GetSpawnInfo(destinationSpawnName)
+        return spawnInfo
+    end)
+
+    if success then
+        TeleportService:TeleportToPlaceInstance(destinationPlaceId, success.id, player)
+    else
+        warn("Teleport failed: " .. errorMessage)
+    end
+end
+
+-- Connect the teleportation function to a trigger event
+-- Replace "Teleport trigger" with the actual trigger object in your game
+script.Parent.Touched:Connect(function(triggerPart)
+    -- Make sure the part touched is a player
+    local character = triggerPart.Parent"Kito", "Wukong"
+    local humanoid = character:FindFirstChild("Humanoid")
+    if humanoid then
+        teleportPlayer(character.Parent,3311165597, "Earth", "Bills Planet")
+    end
+end)
+       
+   end,
+})
+
+local Toggle = MainTab:CreateToggle({
+   Name = "Auto Transform",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        loadstring(game:HttpGet("https://pastebin.com/raw/zt5pVPJ5"))()   
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   end,
+})

@@ -98,15 +98,6 @@ end
    end,
 })
 
-local AutoCharge = Main.Toggle({
-    Text = 'Auto-Charge',
-    Callback = function(bool) 
-        while bool and wait() do 
-            game:GetService("ReplicatedStorage").Package.Events.cha:InvokeServer('Blacknwhite27')
-        end
-    end 
-})
-
 local Dropdown = MainTab:CreateDropdown({
    Name = "Teleport",
    Options = {"Earth","Bills Planet"},
@@ -151,4 +142,13 @@ local Toggle = MainTab:CreateToggle({
         loadstring(game:HttpGet("https://pastebin.com/raw/zt5pVPJ5"))()   
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
+})
+
+local AutoCharge = Main.Toggle({
+    Text = 'Auto-Charge',
+    Callback = function(bool) 
+        while bool and wait() do 
+            game:GetService("ReplicatedStorage").Package.Events.cha:InvokeServer('Blacknwhite27')
+        end
+    end 
 })

@@ -103,10 +103,10 @@ local Toggle = MainTab:CreateToggle({
    CurrentValue = false,
    Flag = "Toggle1", 
    Callback = function(Value)
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/BimbusCoder/Roblox-Scripts/master/MaterialLua"))()
-   end,
+game:GetService("ReplicatedStorage").Package.Events.cha:InvokeServer('Blacknwhite27')
+        end
+    end 
 })
-
 local Dropdown = MainTab:CreateDropdown({
    Name = "Teleport",
    Options = {"Earth","Bills Planet"},

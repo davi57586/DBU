@@ -98,15 +98,15 @@ end
    end,
 })
 
-local Toggle = MainTab:CreateToggle({
-   Name = "Auto Charge ",
-   CurrentValue = false,
-   Flag = "Toggle1", 
-   Callback = function(Value)
-game:GetService("ReplicatedStorage").Package.Events.cha:InvokeServer('Blacknwhite27')
+local AutoCharge = Main.Toggle({
+    Text = 'Auto-Charge',
+    Callback = function(bool) 
+        while bool and wait() do 
+            game:GetService("ReplicatedStorage").Package.Events.cha:InvokeServer('Blacknwhite27')
         end
     end 
 })
+
 local Dropdown = MainTab:CreateDropdown({
    Name = "Teleport",
    Options = {"Earth","Bills Planet"},

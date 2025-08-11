@@ -54,6 +54,17 @@ local Toggle = MainTab:CreateToggle({
    end,
 })
 
+local atack 1 = Main.Toggle({
+    Text = 'atack 1',
+    Callback = function(bool)
+        pcall(function()
+            while bool and wait() do 
+                game:GetService("ReplicatedStorage").Package.Events.p:FireServer("Blacknwhite27", 1)
+            end
+        end)
+    end 
+})
+
 local Slider = MainTab:CreateSlider({
    Name = "Fly Speed",
    Range = {0, 100000},

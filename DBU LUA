@@ -54,6 +54,14 @@ local Toggle = MainTab:CreateToggle({
    end,
 })
 
+local Toggle = MainTab:CreateToggle({
+   Name = "Auto Charge ",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+        game:GetService("ReplicatedStorage").Package.Events.p:FireServer("Blacknwhite27", 1)
+   end,
+})
 local Slider = MainTab:CreateSlider({
    Name = "Fly Speed",
    Range = {0, 100000},
@@ -95,6 +103,15 @@ end
 while wait(0.5) do
     Invincibility(LocalPlayer)
 end    
+   end,
+})
+
+local Toggle = MainTab:CreateToggle({
+   Name = "Auto Charge ",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/BimbusCoder/Roblox-Scripts/master/MaterialLua"))()
    end,
 })
 
@@ -142,12 +159,4 @@ local Toggle = MainTab:CreateToggle({
         loadstring(game:HttpGet("https://pastebin.com/raw/zt5pVPJ5"))()   
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
-local AutoCharge = Main.Toggle({
-    Text = 'Auto-Charge',
-    Callback = function(bool) 
-        while bool and wait() do 
-            game:GetService("ReplicatedStorage").Package.Events.cha:InvokeServer('Blacknwhite27')
-        end
-    end 
-})
 })

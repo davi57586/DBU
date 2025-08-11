@@ -76,25 +76,40 @@ local Toggle = MainTab:CreateToggle({
 })
 
 local Toggle = MainTab:CreateToggle({
-   Name = "God Mode",
-   CurrentValue = false,
-   Flag = "Toggle1", 
-   Callback = function(Value)
+    Name = "atack 1",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(Value)
         local LocalPlayer = game:GetService("Players").LocalPlayer
- 
-local function Invincibility()
-    if LocalPlayer.Character then
-        for i, v in pairs(LocalPlayer.Character:GetChildren()) do
-            if v.Name == "hitbox" then
-                v:Destroy()
-            end
+        local Event = game:GetService("ReplicatedStorage").Package.Events.p
+
+        if Value == true then
+            -- Quando ativar, começa um loop para ficar disparando o evento
+            spawn(function()
+                while MainTab.Flags["Toggle1"] do
+                    Event:FireServer("Blacknwhite27", 1)
+                    wait(0.3) -- intervalo para não sobrecarregar
+                end
+            end)
+        else
+            -- Quando desativar, o loop para automaticamente porque verifica a flag
+            -- Não precisa fazer nada aqui
         end
     end
-end
+})
  
 while wait(0.5) do
     Invincibility(LocalPlayer)
 end    
+   end,
+})
+
+local Toggle = MainTab:CreateToggle({
+   Name = "Auto Charge ",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/BimbusCoder/Roblox-Scripts/master/MaterialLua"))()
    end,
 })
 
@@ -142,12 +157,4 @@ local Toggle = MainTab:CreateToggle({
         loadstring(game:HttpGet("https://pastebin.com/raw/zt5pVPJ5"))()   
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
-local AutoCharge = Main.Toggle({
-    Text = 'Auto-Charge',
-    Callback = function(bool) 
-        while bool and wait() do 
-            game:GetService("ReplicatedStorage").Package.Events.cha:InvokeServer('Blacknwhite27')
-        end
-    end 
-})
 })
